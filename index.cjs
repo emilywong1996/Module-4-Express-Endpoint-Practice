@@ -76,7 +76,8 @@ app.get('/cars', async function(req, res) {
     console.log('/cars/:id');
 
     // Attaches JSON content to the response
-    const query = await req.db.query(`
+    // ADD THE BRACKETS PLEASE, THE BUFFER DATA STUFF WILL GO AWAY IF YOU DO THIS
+    const [query] = await req.db.query(`
       SELECT * FROM car
     `,);
 
